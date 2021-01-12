@@ -42,7 +42,6 @@ def category(request,category):
 def detail(request,title):
     post=Post.objects.filter(title=title)
     p=post.get()
-    print(p)
     context={
         'post':p,
     }
