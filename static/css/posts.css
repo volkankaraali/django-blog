@@ -1,0 +1,80 @@
+#pgPostCategory{
+    margin-top: 20px;
+}
+#pgPost_CardDiv{
+    margin-top: 20px;
+}
+
+#pgPosts_SearchBar{
+    margin-top: 20px;
+}
+#pgPost_SearchBtn{
+    margin-top: 10px;
+}
+
+#imgPosts{
+    height: 100%;
+    width: 100%;
+    
+}
+
+#postCard{
+    background-color: #F2F2F2;
+    border:none;
+}
+
+#tbCategoryHead{
+    background-color: #101726;
+    color: #F2F2F2;
+}
+#tbCategorysTitle > a{
+    font-weight: bold;
+    color: #101726;
+    text-decoration: none;
+}
+#tbCategorysTitle > span{
+    margin-left: 10px;
+    color: #F2F2F2;
+    background-color:#101726 ;
+    
+}
+
+#postDiv{
+    padding: 5px;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+#postDiv:hover{
+    transform: scale(1.1);
+}
+
+.txtCatgDate{
+    font-size: 12px;
+}
+.txtContent{
+    font-size: 22px;
+}
+#aContent{
+    font-size: 12px;
+    text-decoration: none;
+    color: #101726;
+}
+#aTitle{
+    text-decoration: none;
+    color: #101726;
+}
+#aTitle > h3{
+    color: #101726;
+    
+}
+.pagination>li.active>a {
+    border-color: #101726 !important ;
+    color: #F2F2F2 !important;
+    background-color: #101726 !important;
+  }
+.page-link{
+    color: #101726;
+}
+.page-link:hover{
+    color: #101726;
+}

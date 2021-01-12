@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+{% load static%}
+{% block content %}
+<div class="container">
+    
+    
+    {%for i in posts%}
+            <div id="categoryDetail" class="card mb-3" style="max-width: 100%">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        {%if i.img%}
+                                <img id="imgCategory"src="{{i.img.url}}" alt="">
+                            {%else%}
+                                <img id="" src="" alt="">
+                            {%endif%}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <a href="{% url 'detail' i.title %}"><h5 class="card-title">{{i.title}}</h5></a>
+                            <a href=""><p class="card-text">{{i.content}}</p></a>
+                            <p class="card-text"><small class="text-muted">{{i.category}}</small></p>
+                            <p class="card-text"><small class="text-muted">{{i.createDate| date:'j-F-Y'}}</small></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty%}
+        <div class="alert alert-danger mt-2" role="alert">
+            Yazı bulunmamaktadır.
+          </div>
+        {% endfor%}    
+        
+
+        <!-- paginator (sayfa numaralandırma) -->
+        <div class="row">
+            <div class="col-md-8">
+                <nav aria-label="...">
+                    <ul class="pagination">
+                        {%if posts.has_previous%}
+                        <li class="page-item ">
+                            <a class="page-link" href="?page={{posts.previous_page_number}}" tabindex="-1"><i class="fas fa-angle-double-left"></i> </a>
+                        </li>
+                        {%endif%}
+                        {%for num in posts.paginator.page_range %}
+                        {%if posts.number is num%}
+                        <li class="page-item active">
+                            <a class="page-link " href="?page={{num}}">{{num}}</a>
+                        </li>
+                        {% elif num > posts.number|add:'-3' and num < posts.number|add:'3'%} <li class="page-item"><a class="page-link"
+                                href="?page={{num}}">{{num}}</a></li>
+                            {%endif%}
+                            {%endfor%}
+                            {%if posts.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{posts.next_page_number}}"><i class="fas fa-angle-double-right"></i></a>
+                            </li>
+                            {%endif%}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

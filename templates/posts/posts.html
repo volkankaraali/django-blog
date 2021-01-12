@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+{% load static%}
+{% block content %}
+    
+    <div class="container">
+        <div class="row">
+            <!-- posts-->
+            <div id="pgPost_CardDiv" class="col-sm-8">
+                {% for post in posts %}
+                <div id="postDiv">
+                    <div class="row">
+                        <div id="postDiv_img" class="col-sm-4">
+                            {%if post.img%}
+                            <img  id="imgPosts" src="{{post.img.url}}" alt="">
+                            {%else%}
+                                <img id="" src="" alt="">
+                            {%endif%}
+                        </div>
+                        <div id="postDiv_content"class="col-sm-8">
+                            <a id="aTitle" href="{% url 'detail' post.title %}"><h3>{{post.title}}</h3></a>
+                            <a id="aContent" href="{% url 'detail' post.title %}"><p class="txtContent">{{post.content|truncatechars:100}}</p></a>
+                            <p class="txtCatgDate">{{post.category}}  {{post.createDate| date:'j-F-Y'}}</p>
+    
+                        </div>
+                    </div>
+                </div>
+                {% endfor %} 
+                
+            </div>
+
+            <!-- categorys-->
+            <div class="col-sm-4">
+                <div id="pgPostCategory"class="container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th id="tbCategoryHead">Son Yazılar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for p in category%}
+                            <tr>
+                                <td id="tbCategorysTitle">
+                                    <a href="{% url 'category' p %}">{{p}}</a>
+                                    <span class="badge rounded-pill">{{p.post_set.count}}</span> 
+                                </td>
+                                
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- paginator (sayfa numaralandırma) -->
+        <div class="row">
+            <div class="col-md-8">
+                <nav aria-label="...">
+                    <ul class="pagination">
+                        {%if posts.has_previous%}
+                        <li class="page-item ">
+                            <a class="page-link" href="?page={{posts.previous_page_number}}" tabindex="-1"><i class="fas fa-angle-double-left"></i> </a>
+                        </li>
+                        {%endif%}
+                        {%for num in posts.paginator.page_range %}
+                        {%if posts.number is num%}
+                        <li class="page-item active">
+                            <a class="page-link" href="?page={{num}}">{{num}}</a>
+                        </li>
+                        {% elif num > posts.number|add:'-3' and num < posts.number|add:'3'%} <li class="page-item"><a class="page-link"
+                                href="?page={{num}}">{{num}}</a></li>
+                            {%endif%}
+                            {%endfor%}
+                            {%if posts.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{posts.next_page_number}}"><i class="fas fa-angle-double-right"></i></a>
+                            </li>
+                            {%endif%}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+   
+    
+    
+    
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% load static%}
+{% block content %}
+
+    
+    <div class="container">
+    
+    
+        <div id="pgDetail_Card" class="card">
+            <div class="row">
+                <div class="col-md-12">
+                    {%if post.img%}
+                    <img id="detailImg" class="card-img-top" src="{{post.img.url}}" alt="">
+                    {%else%}
+                    <img id="detailImg" class="card-img-top" src="/images/blogapp-site.png" alt="">
+                    {%endif%}
+                    <div class="card-body">
+                        <h5 class="card-title">{{post.title}}</h5>
+                        <p class="card-text">{{post.content}}</p>
+                        <p class="card-text"><small class="text-muted">{{post.category}}</small></p>
+                        <p class="card-text"><small class="text-muted">{{post.createDate| date:'j-F-Y'}}</small></p>
+    
+                    </div>
+                </div>
+                
+    
+            </div>
+
+        </div>
+    </div>
+
+
+    
+    
+    
+{% endblock %}

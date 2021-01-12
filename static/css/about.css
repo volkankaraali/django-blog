@@ -1,0 +1,11 @@
+
+#pgAboutDiv{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 100px;
+    border: #101726;
+    border-radius: 9px;
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+}

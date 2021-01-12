@@ -1,0 +1,63 @@
+html,body{
+    height: 100%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2
+} 
+
+#menuBar{
+    text-align: center;
+}
+
+h6{
+    
+    padding: 8px;
+    color: #101726;
+    border:#101726;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    
+    transition:  0.8s;
+    
+}
+
+h6:hover{
+    
+    color: #EBEFF2;
+    background-color: #101726;
+}
+
+li{
+    padding-top: 5px;
+}
+
+#brandText{
+    padding:5px;
+    color:#101726;
+    transition: 1s;
+}
+#brandText:hover{
+    font-size: 32px;
+
+    
+}
+
+.navbar-toggler{
+    border-color:black;
+}
+
+footer{
+    background-color:#101726 ;
+    margin-top: 30px;
+}
+
+footer>div{
+    padding:20px;
+}
+#pFooter,#aFooter{
+    text-align: center;
+    color: #EBEFF2 ;
+}
