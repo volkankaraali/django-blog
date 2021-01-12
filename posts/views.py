@@ -2,6 +2,7 @@ from django.shortcuts import render,HttpResponse
 from .models import *
 from django.db.models import Count
 from django.core.paginator import Paginator
+
 # Create your views here.
 
 def posts(request):
@@ -41,9 +42,9 @@ def category(request,category):
 def detail(request,title):
     post=Post.objects.filter(title=title)
     p=post.get()
+    print(p)
     context={
         'post':p,
-
     }
     return render(request,'posts/detail.html',context)
 

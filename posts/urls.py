@@ -6,5 +6,4 @@ urlpatterns = [
     path('/category/<slug:category>', views.category, name='category'),
     path('/detail/<str:title>', views.detail, name='detail'),
     
-    
 ]
