@@ -11,9 +11,11 @@
                     <div class="row">
                         <div id="postDiv_img" class="col-sm-4">
                             {%if post.img%}
-                            <img  id="imgPosts" src="{{post.img.url}}" alt="">
+                            <a href="{% url 'detail' post.title %}"><img id="pgPostImg"src="{{post.img.url}}" class="d-block "
+                                alt="..." height=""></a>
                             {%else%}
-                                <img id="" src="" alt="">
+                            <a href="{% url 'detail' post.title %}"><img id="pgPostImg"src="/images/blogapp-site.png" class="d-block"
+                                alt="..." height=""></a>
                             {%endif%}
                         </div>
                         <div id="postDiv_content"class="col-sm-8">
