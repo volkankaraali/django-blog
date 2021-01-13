@@ -5,65 +5,7 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col-sm-9">
-                <!--
-                   <div id="carouselExampleCaptions" class="carousel carousel-dark slide   " data-bs-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner rounded-3">
-                        <div class="carousel-item active">
-                            {%if lastposts.0.img %}
-                            <a href="{% url 'detail' lastposts.0.title %}"><img src="{{lastposts.0.img.url}}" class="d-block w-100"
-                                    alt="..." height="300"></a>
-                            {%else%}
-                            <a href="{% url 'detail' lastposts.0.title %}"><img src="/images/blogapp-site.png" class="d-block w-100"
-                                    alt="..." height="300"></a>
-                            {%endif%}
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{lastposts.0.title}}</h5>
-                                <p>{{lastposts.0.content | truncatewords:10}}</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item ">
-                            {%if lastposts.1.img %}
-                            <a href="{% url 'detail' lastposts.1.title %}"><img src="{{lastposts.1.img.url}}" class="d-block w-100"
-                                    alt="..." height="300"></a>
-                            {%else%}
-                            <a href="{% url 'detail' lastposts.1.title %}"><img src="/images/blogapp-site.png" class="d-block w-100"
-                                    alt="..." height="300"></a>
-                            {%endif%}
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{lastposts.1.title}}</h5>
-                                <p>{{lastposts.1.title | truncatewords:10}}</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item ">
-                            {%if lastposts.2.img %}
-                            <a href="{% url 'detail' lastposts.2.title %}"><img src="{{lastposts.2.img.url}}" class="d-block w-100"
-                                    alt="..." height="300"></a>
-                            {%else%}
-                            <a href="{% url 'detail' lastposts.2.title %}"><img src="/images/blogapp-site.png" class="d-block w-100"
-                                    alt="..." height="300"></a>
-                            {%endif%}
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{lastposts.2.title}}</h5>
-                                <p>{{lastposts.2.title | truncatewords:10}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </a>
-            
-                </div> 
-                -->
+                
                 {%for randompost in randomPosts%}
                 <div class="card-deck">
                     <div class="card mb-2">
