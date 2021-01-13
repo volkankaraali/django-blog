@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <a href="{% url 'detail' i.title %}"><h5 class="card-title">{{i.title}}</h5></a>
+                            <a href="{% url 'detail' i.pk %}"><h5 class="card-title">{{i.title}}</h5></a>
                             <a href=""><p class="card-text">{{i.content}}</p></a>
                             <p class="card-text"><small class="text-muted">{{i.category}}</small></p>
                             <p class="card-text"><small class="text-muted">{{i.createDate| date:'j-F-Y'}}</small></p>

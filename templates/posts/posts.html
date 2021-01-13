@@ -17,8 +17,8 @@
                             {%endif%}
                         </div>
                         <div id="postDiv_content"class="col-sm-8">
-                            <a id="aTitle" href="{% url 'detail' post.title %}"><h3>{{post.title}}</h3></a>
-                            <a id="aContent" href="{% url 'detail' post.title %}"><p class="txtContent">{{post.content|truncatechars:100}}</p></a>
+                            <a id="aTitle" href="{% url 'detail' post.pk %}"><h3>{{post.title}}</h3></a>
+                            <a id="aContent" href="{% url 'detail' post.pk %}"><p class="txtContent">{{post.content|truncatechars:100}}</p></a>
                             <p class="txtCatgDate">{{post.category}}  {{post.createDate| date:'j-F-Y'}}</p>
     
                         </div>

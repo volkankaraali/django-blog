@@ -39,8 +39,8 @@ def category(request,category):
     
     return render(request,'posts/category.html',context)
 
-def detail(request,title):
-    post=Post.objects.filter(title=title)
+def detail(request,pk):
+    post=Post.objects.filter(id=pk)
     p=post.get()
     context={
         'post':p,
