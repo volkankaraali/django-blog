@@ -17,8 +17,8 @@
                                 alt="No Image" height=""></a>
                         {%endif%}
                       <div class="card-body">
-                        <h5 class="card-title">{{randompost.title}}</h5>
-                        <p class="card-text">{{randompost.content|truncatechars:100}}</p>
+                        <a href="{% url 'detail' randompost.title %}"><h5 class="card-title">{{randompost.title}}</h5></a>
+                        <a href="{% url 'detail' randompost.title %}"><p class="card-text">{{randompost.content|truncatechars:100}}</p></a>
                         <small class="text-muted">{{randompost.category}}</small>
                         <small class="text-muted">{{randompost.createDate|date:'j F Y'}}</small>  
                       </div>
