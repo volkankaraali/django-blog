@@ -10,18 +10,17 @@
                 <div class="card-deck">
                     <div class="card mb-2">
                         {%if randompost.img %}
-                        <a href="{% url 'detail' randompost.title %}"><img src="{{randompost.img.url}}" class="d-block w-100"
+                        <a href="{% url 'detail' randompost.title %}"><img id="homeImg"src="{{randompost.img.url}}" class="d-block"
                                 alt="..." height=""></a>
                         {%else%}
-                        <a href="{% url 'detail' randompost.title %}"><img src="/images/blogapp-site.png" class="d-block w-100"
+                        <a href="{% url 'detail' randompost.title %}"><img id="homeImg" src="/images/blogapp-site.png" class="d-block"
                                 alt="..." height=""></a>
                         {%endif%}
                       <div class="card-body">
                         <h5 class="card-title">{{randompost.title}}</h5>
-                        <p class="card-text">{{randompost.content}}</p>
-                      </div>
-                      <div class="card-footer">
-                        <small class="text-muted">{{randompost.createDate}}</small>
+                        <p class="card-text">{{randompost.content|truncatechars:100}}</p>
+                        <small class="text-muted">{{randompost.category}}</small>
+                        <small class="text-muted">{{randompost.createDate|date:'j F Y'}}</small>  
                       </div>
                     </div>
                   </div>
@@ -37,7 +36,7 @@
                     <tbody>
                         {%for lastpost in lastposts%}
                         <tr>
-                            <td id="tbLastPostTitle"><a id="aLastPostTitle" href="{% url 'detail' lastpost.title %}" target="_blank">{{lastpost.title}} <span id="spanDate">({{lastpost.createDate| date:'j/F/Y'}})</span></a></td>
+                            <td id="tbLastPostTitle"><a id="aLastPostTitle" href="{% url 'detail' lastpost.title %}" target="_blank">{{lastpost.title}} <span id="spanDate">({{lastpost.createDate| date:'j F Y'}})</span></a></td>
                         </tr>
                         {%endfor%}
                     </tbody>
