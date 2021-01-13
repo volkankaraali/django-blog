@@ -7,7 +7,7 @@ import random
 def home(request):
     lastPosts=Post.objects.all().order_by('-id')[:5] #getting last 3 posts. '-' mean is the last posts. and 3 is display 3 posts
     users=User.objects.filter(groups__name='Yazarlar') #getting users who is in yazarlar group 
-
+    
     randomPosts=Post.objects.all().order_by('?')[:3]
 
     context={

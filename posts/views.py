@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,get_object_or_404
 from .models import *
 from django.db.models import Count
 from django.core.paginator import Paginator
@@ -40,7 +40,8 @@ def category(request,category):
     return render(request,'posts/category.html',context)
 
 def detail(request,pk):
-    post=Post.objects.get(id=pk)
+    post=get_object_or_404(Post,id=pk)
+    #post=Post.objects.get(id=pk)
     context={
         'post':post,
     }
