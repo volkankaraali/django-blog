@@ -10,10 +10,10 @@
                 <div class="card-deck">
                     <div class="card mb-2">
                         {%if randompost.img %}
-                        <a href="{% url 'detail' randompost.pk %}"><img src="{{randompost.img.url}}" class="d-block w-100"
+                        <a href="{% url 'detail' randompost.title %}"><img src="{{randompost.img.url}}" class="d-block w-100"
                                 alt="..." height="300"></a>
                         {%else%}
-                        <a href="{% url 'detail' randompost.pk %}"><img src="/images/blogapp-site.png" class="d-block w-100"
+                        <a href="{% url 'detail' randompost.title %}"><img src="/images/blogapp-site.png" class="d-block w-100"
                                 alt="..." height="300"></a>
                         {%endif%}
                       <div class="card-body">
@@ -37,7 +37,7 @@
                     <tbody>
                         {%for lastpost in lastposts%}
                         <tr>
-                            <td id="tbLastPostTitle"><a id="aLastPostTitle" href="{% url 'detail' lastpost.pk %}" target="_blank">{{lastpost.title}} <span id="spanDate">({{lastpost.createDate| date:'j/F/Y'}})</span></a></td>
+                            <td id="tbLastPostTitle"><a id="aLastPostTitle" href="{% url 'detail' lastpost.title %}" target="_blank">{{lastpost.title}} <span id="spanDate">({{lastpost.createDate| date:'j/F/Y'}})</span></a></td>
                         </tr>
                         {%endfor%}
                     </tbody>

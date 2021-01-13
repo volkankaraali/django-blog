@@ -39,8 +39,8 @@ def category(request,category):
     
     return render(request,'posts/category.html',context)
 
-def detail(request,pk):
-    post=get_object_or_404(Post,id=pk)
+def detail(request,title):
+    post=get_object_or_404(Post,title=title)
     #post=Post.objects.get(id=pk)
     context={
         'post':post,
