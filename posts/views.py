@@ -40,10 +40,9 @@ def category(request,category):
     return render(request,'posts/category.html',context)
 
 def detail(request,pk):
-    post=Post.objects.filter(id=pk)
-    p=post.get()
+    post=Post.objects.get(id=pk)
     context={
-        'post':p,
+        'post':post,
     }
     return render(request,'posts/detail.html',context)
 
