@@ -3,4 +3,9 @@
 }
 #pgDetail_Card{
     margin-bottom: 30px;
+    overflow: auto;
+    
+}
+.card-body{
+    word-wrap: break-word;
 }

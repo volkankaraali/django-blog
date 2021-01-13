@@ -1,5 +1,6 @@
 html,body{
     height: 100%;
+    margin: 0;
 }
 body{
     display: flex;
@@ -56,6 +57,11 @@ footer{
 
 footer>div{
     padding:20px;
+}
+#footer{
+    position: static;
+    width: 100%;
+    
 }
 #pFooter,#aFooter{
     text-align: center;
